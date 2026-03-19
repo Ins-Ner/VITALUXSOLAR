@@ -1,1 +1,1 @@
-# SolarHub
+# VITALUX SOLAR
