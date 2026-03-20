@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VITALUX SOLAR — Kits Solares</title>
+<link rel="icon" type="image/png" href="logo.png">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
 
@@ -183,19 +184,6 @@
     transition: border .2s;
   }
   .comm-input:focus { border-color: var(--sun); }
-  /* Remove native select arrow + white hover highlight */
-  select.comm-input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23ff8c00'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    padding-right: 28px;
-    cursor: pointer;
-    text-align: left;
-  }
-  select.comm-input:hover { border-color: var(--amber); background-color: var(--surface2); }
   .comm-pct { font-size: 11px; color: var(--dim); }
   .comm-result {
     background: linear-gradient(135deg, var(--surface) 0%, rgba(255,184,0,0.05) 100%);
@@ -268,169 +256,12 @@
   }
   #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-  /* ══════════════════════════════════════════
-     MOBILE RESPONSIVO — max-width: 700px
-  ══════════════════════════════════════════ */
   @media (max-width: 700px) {
-
-    /* ── ROOT ── */
-    :root { --W: 100%; }
-
-    /* ── HEADER ── */
-    header {
-      flex-direction: column;
-      gap: 10px;
-      padding: 14px 16px;
-      text-align: center;
-    }
-    .logo-main { font-size: 22px; letter-spacing: 2px; }
-    .logo-sub { font-size: 9px; letter-spacing: 1px; }
-    .header-tag { font-size: 10px; text-align: center; }
-
-    /* ── NAV TABS ── */
-    nav {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-    }
-    nav button {
-      padding: 11px 4px;
-      font-size: 10px;
-      letter-spacing: 0;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    nav button:nth-child(2n) { border-right: none; }
-    nav button:nth-child(3), nav button:nth-child(4) { border-bottom: none; }
-
-    /* ── PAGE CONTAINER ── */
-    .page { padding: 18px 14px 80px; }
-
-    /* ── SECTION TITLE ── */
-    .sec-title { font-size: 16px; letter-spacing: 1px; }
-    .sec-sub { font-size: 10px; letter-spacing: 1px; margin-bottom: 16px; }
-
-    /* ── KIT GRID ── */
-    .kit-grid {
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-    .kit-card { padding: 16px 14px; }
-    .kit-kwh { font-size: 22px; }
-    .kit-kwh span { font-size: 12px; }
-    .kit-desc { font-size: 10px; margin: 4px 0 10px; }
-
-    /* ── COMPONENTS TABLE ── */
-    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    .comp-table { font-size: 11px; min-width: 480px; }
-    .comp-table th { padding: 7px 8px; font-size: 9px; }
-    .comp-table td { padding: 7px 8px; }
-    .comp-table td.price,
-    .comp-table td.total { font-size: 11px; }
-
-    /* ── KIT TOTAL BAR ── */
-    .kit-total-bar {
-      flex-direction: column;
-      gap: 8px;
-      align-items: flex-start;
-      padding: 14px 16px;
-    }
-    .kt-value { font-size: 22px; }
-    .kt-label { font-size: 11px; }
-
-    /* ── PRICE COMPARISON ── */
-    .plat-grid {
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-    .plat-card { padding: 16px 14px; }
-    .plat-name { font-size: 12px; }
-    .plat-row { font-size: 11px; padding: 6px 0; }
-    .plat-price { font-size: 12px; }
-
-    /* ── BANNER PAGE ── */
-    #page-banner { padding: 14px 14px 80px; }
-    #banner-preview {
-      padding: 24px 20px 22px !important;
-      min-height: unset !important;
-    }
-    #b-title-el { font-size: 24px !important; margin-bottom: 16px !important; }
-    .b-kit-badge { font-size: 13px !important; padding: 5px 12px !important; }
-    #b-desc-el { font-size: 12px !important; line-height: 1.7 !important; margin-bottom: 20px !important; }
-    #b-tag-el { font-size: 11px !important; letter-spacing: 2px !important; }
-    .b-footer { flex-direction: column; gap: 12px; align-items: flex-start; }
-    .b-cta { font-size: 12px !important; padding: 9px 16px !important; }
-    .b-contact { font-size: 11px; }
-
-    /* ── COMMISSION CALCULATOR ── */
-    .comm-grid {
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-    .comm-panel { padding: 16px 14px; }
-    .comm-panel-title { font-size: 12px; margin-bottom: 12px; }
-    .comm-row { flex-direction: column; align-items: flex-start; gap: 6px; margin-bottom: 14px; }
-    .comm-row label { font-size: 11px; }
-    .comm-input { width: 100% !important; font-size: 13px; }
-    .comm-result {
-      flex-direction: column;
-      gap: 14px;
-      padding: 16px;
-    }
-    .cr-sep { width: 100%; height: 1px; }
-    .cr-block { min-width: unset; }
-    .cr-val { font-size: 18px; }
-    .cr-val.big { font-size: 24px; }
-
-    /* Kit selector bar in commission page */
-    #page-comissao > div:first-of-type {
-      flex-direction: column !important;
-      gap: 10px !important;
-      padding: 14px !important;
-    }
-    #comm-kit { width: 100% !important; }
-    #page-comissao .btn { width: 100%; justify-content: center; }
-
-    /* ── BUTTONS ── */
-    .btn { padding: 10px 16px; font-size: 12px; }
-    .btn-row { gap: 8px; }
-    .btn-row .btn { flex: 1; justify-content: center; }
-
-    /* ── STATUS BAR ── */
-    .status-bar {
-      padding: 10px 16px;
-      gap: 8px;
-    }
-    .status-text { font-size: 10px; }
-    .status-kit { font-size: 10px; }
-
-    /* ── NOTICE ── */
-    .notice { font-size: 10px; padding: 8px 10px; line-height: 1.6; }
-
-    /* ── CHIP FILTERS ── */
-    .chip { font-size: 10px; padding: 2px 8px; }
-
-    /* Summary table in precos page */
-    #page-precos .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    #page-precos .comp-table { min-width: 420px; }
-
-    /* ── TOAST ── */
-    #toast { font-size: 11px; padding: 7px 18px; bottom: 52px; }
-
-    /* ── MISC ── */
-    .sep { margin: 14px 0; }
-  }
-
-  /* ── SMALL PHONES (< 380px) ── */
-  @media (max-width: 380px) {
-    .logo-main { font-size: 18px; }
-    nav button { font-size: 9px; padding: 10px 2px; }
-    .kit-kwh { font-size: 20px; }
-    #b-title-el { font-size: 20px !important; }
-    .kt-value { font-size: 20px; }
+    .kit-grid { grid-template-columns: 1fr; }
+    .plat-grid { grid-template-columns: 1fr; }
+    .comm-grid { grid-template-columns: 1fr; }
+    .banner-controls { grid-template-columns: 1fr; }
+    header { flex-direction: column; gap: 8px; text-align: center; }
   }
 </style>
 </head>
@@ -661,11 +492,11 @@
         </div>
         <div class="comm-row">
           <label>MÃO DE OBRA INST. (R$)</label>
-          <input class="comm-input" id="comm-mdo" type="number" value="4500" oninput="calcComm()">
+          <input class="comm-input" id="comm-mdo" type="number" value="1200" oninput="calcComm()">
         </div>
         <div class="comm-row">
           <label>OUTROS CUSTOS (R$)</label>
-          <input class="comm-input" id="comm-outros" type="number" value="0" oninput="calcComm()">
+          <input class="comm-input" id="comm-outros" type="number" value="300" oninput="calcComm()">
         </div>
       </div>
 
