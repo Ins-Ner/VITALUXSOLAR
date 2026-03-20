@@ -183,6 +183,19 @@
     transition: border .2s;
   }
   .comm-input:focus { border-color: var(--sun); }
+  /* Remove native select arrow + white hover highlight */
+  select.comm-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23ff8c00'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 28px;
+    cursor: pointer;
+    text-align: left;
+  }
+  select.comm-input:hover { border-color: var(--amber); background-color: var(--surface2); }
   .comm-pct { font-size: 11px; color: var(--dim); }
   .comm-result {
     background: linear-gradient(135deg, var(--surface) 0%, rgba(255,184,0,0.05) 100%);
